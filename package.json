@@ -1,6 +1,6 @@
 {
   "name": "equs-vc-schema-templates",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "VC Schema templates",
   "type": "module",
