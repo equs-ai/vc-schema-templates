@@ -43,12 +43,6 @@ them outright. Those are tenant decisions taken at creation time: issuers are te
 records, the public flag is the tenant's disclosure policy, and a dedicated DID is
 deployment-specific.
 
-### `EdDSA` is not usable
-
-The platform's `SignAlg` enum advertises `EdDSA`, but its runtime whitelist accepts `ES256`
-only. A template declaring `EdDSA` looks valid and is not — so CI rejects it rather than
-letting the platform silently drop it after publication.
-
 ### One version per identifier
 
 Superseded `templates/*.json` files stay here as history. The bundle carries only the current
@@ -92,11 +86,3 @@ Production pins a SHA. Tag URLs are fine for local and non-production convenienc
 Each region pins independently and may serve a different catalogue. Cross-region sharing is
 explicitly not a goal.
 
-## Why CI checks what it checks
-
-The platform re-validates every template on ingest against the same claim-definition and
-signing-algorithm rules `POST /vc-schemas` enforces, and drops what fails. CI exists to catch
-those failures *before* merge, and to catch the one class the platform cannot see: a
-well-formed template with a misleading description and an attacker-controlled `logo.uri`
-rendered in the operator portal. That is why `logo.uri` is constrained to an allowlisted host
-set here rather than on a review checklist.
