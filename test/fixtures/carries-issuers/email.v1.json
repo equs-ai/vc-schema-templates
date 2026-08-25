@@ -1,0 +1,37 @@
+{
+  "id": "email",
+  "version": 1,
+  "category": "identity",
+  "name": "E-mail address",
+  "description": "A credential attesting a verified e-mail address of the holder.",
+  "format": "SdJwtVc",
+  "bindMethod": [
+    "JWK"
+  ],
+  "credSignAlgs": [
+    "ES256"
+  ],
+  "proofSignAlgs": [
+    "ES256"
+  ],
+  "expiration": 31536000,
+  "logo": {
+    "uri": "https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/mark/kanba.png",
+    "altText": "E-mail logo"
+  },
+  "bgColor": "#2f4e73",
+  "textColor": "#000000",
+  "claimDefs": [
+    {
+      "path": [
+        "email"
+      ],
+      "name": "Email",
+      "dataType": "Text",
+      "mandatory": false
+    }
+  ],
+  "issuers": [
+    "3255b9b2-107f-4d91-b02d-5bc2ca0f291a"
+  ]
+}

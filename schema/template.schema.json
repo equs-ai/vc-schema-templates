@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://equs.example/vc-schema-templates/schema/template.schema.json",
+  "title": "VC Schema Template",
+  "description": "A curated VC Schema shape. It describes a credential, never who issues it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "category",
+    "name",
+    "description",
+    "format",
+    "bindMethod",
+    "credSignAlgs",
+    "proofSignAlgs",
+    "claimDefs"
+  ],
+  "properties": {
+    "id": {
+      "description": "Registry slug identifying the credential shape. Not a UUID.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]{1,64}$"
+    },
+    "version": {
+      "description": "Version of the shape this file publishes. A changed shape is a new version, never an edit in place.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "category": {
+      "description": "Registry slug grouping related templates. Free-form: adding one must not need a platform release.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]{1,64}$"
+    },
+    "name": {
+      "description": "Default display name. A prefill the operator may change, because VC Schema names are unique per tenant.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "description": {
+      "description": "Human-readable description of the credential shape.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "format": {
+      "description": "Credential format.",
+      "type": "string",
+      "enum": ["SdJwtVc"]
+    },
+    "bindMethod": {
+      "description": "Holder key binding methods.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["JWK"] }
+    },
+    "credSignAlgs": {
+      "description": "Algorithms the credential may be signed with. The platform's runtime whitelist is ES256 only.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["ES256", "EdDSA"] }
+    },
+    "proofSignAlgs": {
+      "description": "Algorithms the holder proof may be signed with.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["ES256", "EdDSA"] }
+    },
+    "claimDefs": {
+      "description": "Claim definitions describing the credential.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "name"],
+        "properties": {
+          "path": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "dataType": {
+            "type": "string",
+            "enum": [
+              "Text",
+              "Decimal",
+              "Integer",
+              "Boolean",
+              "DateTime",
+              "Date",
+              "Time",
+              "Array",
+              "Display"
+            ]
+          },
+          "mandatory": { "type": "boolean" }
+        }
+      }
+    },
+    "expiration": {
+      "description": "Seconds after issuance until the credential expires.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "assurance": {
+      "description": "Level of assurance required for the credential subject data.",
+      "type": "string",
+      "enum": ["low", "high"]
+    },
+    "logo": {
+      "description": "Logo rendered for credentials of this shape. Its host is constrained by CI, not by this schema.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "altText"],
+      "properties": {
+        "uri": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "altText": { "type": "string", "minLength": 1 }
+      }
+    },
+    "bgColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "textColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+  }
+}

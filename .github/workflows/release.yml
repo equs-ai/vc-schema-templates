@@ -1,0 +1,34 @@
+name: Publish bundle
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
+      - name: Commit the bundle
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry.bundle.json
+          git commit -m "Publish registry.bundle.json for ${GITHUB_REF_NAME}" || exit 0
+          git push origin HEAD:main
+      - name: Record the release commit SHA
+        run: |
+          echo "Pin deployments to this commit, not to ${GITHUB_REF_NAME}:"
+          git rev-parse HEAD
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: registry.bundle.json

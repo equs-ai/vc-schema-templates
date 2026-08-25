@@ -1,0 +1,24 @@
+name: Validate templates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      # Validates each file against the JSON Schema, asserts the signing algorithms stay within
+      # the platform's runtime whitelist, constrains logo.uri to the allowlisted hosts, and
+      # asserts exactly one file per id is current.
+      - run: npm run validate
+      # Proves each of those checks actually fails on a broken fixture.
+      - run: npm test
+      # A bundle must be buildable from every merged state, not only at release.
+      - run: npm run build

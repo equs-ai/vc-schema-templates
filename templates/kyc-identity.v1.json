@@ -1,0 +1,31 @@
+{
+  "id": "kyc-identity",
+  "version": 1,
+  "category": "identity",
+  "name": "KYC identity",
+  "description": "An identity credential issued off the back of a completed KYC check.",
+  "format": "SdJwtVc",
+  "bindMethod": [
+    "JWK"
+  ],
+  "credSignAlgs": [
+    "ES256"
+  ],
+  "proofSignAlgs": [
+    "ES256"
+  ],
+  "expiration": 31536000,
+  "assurance": "high",
+  "bgColor": "#3D2B56",
+  "textColor": "#FFFFFF",
+  "claimDefs": [
+    {
+      "path": [
+        "email"
+      ],
+      "name": "Email",
+      "dataType": "Text",
+      "mandatory": false
+    }
+  ]
+}

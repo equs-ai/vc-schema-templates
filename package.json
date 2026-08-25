@@ -1,0 +1,16 @@
+{
+  "name": "equs-vc-schema-templates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EQUS-curated VC Schema templates",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs templates",
+    "build": "node scripts/build-bundle.mjs templates registry.bundle.json",
+    "test": "node scripts/test-validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1"
+  }
+}

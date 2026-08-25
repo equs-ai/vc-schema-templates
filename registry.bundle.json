@@ -1,0 +1,289 @@
+{
+  "registryVersion": "1.0.0",
+  "templates": [
+    {
+      "id": "address",
+      "version": 1,
+      "category": "identity",
+      "name": "Address",
+      "description": "A credential attesting the postal address of the holder.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "logo": {
+        "uri": "https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/mark/kanba.png",
+        "altText": "Address logo"
+      },
+      "bgColor": "#99BDDC",
+      "textColor": "#000000",
+      "claimDefs": [
+        {
+          "path": [
+            "address",
+            "zip_code"
+          ],
+          "name": "Zip code",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "address",
+            "city"
+          ],
+          "name": "City",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "address",
+            "state"
+          ],
+          "name": "State",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "age-over-18",
+      "version": 1,
+      "category": "identity",
+      "name": "Age over 18",
+      "description": "A credential attesting that the holder is over 18, without disclosing a date of birth.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "bgColor": "#7ACCB1",
+      "textColor": "#000000",
+      "claimDefs": [
+        {
+          "path": [
+            "age_over_18"
+          ],
+          "name": "Is Over 18",
+          "dataType": "Text",
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": "aml-screening",
+      "version": 1,
+      "category": "aml",
+      "name": "AML screening",
+      "description": "A credential attesting the outcome and date of an anti-money-laundering screening.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "assurance": "high",
+      "bgColor": "#1F3A5F",
+      "textColor": "#FFFFFF",
+      "claimDefs": [
+        {
+          "path": [
+            "aml"
+          ],
+          "name": "AML screening",
+          "dataType": "Display",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "aml",
+            "screening_result"
+          ],
+          "name": "Screening result",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "aml",
+            "screened_at"
+          ],
+          "name": "Screened at",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "aml",
+            "sanctions_match"
+          ],
+          "name": "Sanctions list match",
+          "dataType": "Boolean",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "aml",
+            "pep_match"
+          ],
+          "name": "Politically exposed person match",
+          "dataType": "Boolean",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "country",
+      "version": 1,
+      "category": "identity",
+      "name": "Country",
+      "description": "A credential attesting the country of residence of the holder.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "bgColor": "#FFEC99",
+      "textColor": "#000000",
+      "claimDefs": [
+        {
+          "path": [
+            "address",
+            "country"
+          ],
+          "name": "Country",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "version": 1,
+      "category": "identity",
+      "name": "E-mail address",
+      "description": "A credential attesting a verified e-mail address of the holder.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "logo": {
+        "uri": "https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/mark/kanba.png",
+        "altText": "E-mail logo"
+      },
+      "bgColor": "#2f4e73",
+      "textColor": "#000000",
+      "claimDefs": [
+        {
+          "path": [
+            "email"
+          ],
+          "name": "Email",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "kyc-identity",
+      "version": 1,
+      "category": "identity",
+      "name": "KYC identity",
+      "description": "An identity credential issued off the back of a completed KYC check.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "assurance": "high",
+      "bgColor": "#3D2B56",
+      "textColor": "#FFFFFF",
+      "claimDefs": [
+        {
+          "path": [
+            "email"
+          ],
+          "name": "Email",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "version": 1,
+      "category": "identity",
+      "name": "Name",
+      "description": "A credential attesting the given and family name of the holder.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "expiration": 31536000,
+      "bgColor": "#FFFFFF",
+      "textColor": "#000000",
+      "claimDefs": [
+        {
+          "path": [
+            "first_name"
+          ],
+          "name": "First name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "last_name"
+          ],
+          "name": "Last name",
+          "dataType": "Text",
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}
