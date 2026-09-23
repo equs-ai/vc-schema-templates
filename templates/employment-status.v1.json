@@ -14,7 +14,7 @@
   "proofSignAlgs": [
     "ES256"
   ],
-  "bgColor": "#DBEAFE",
+  "bgColor": "#FFEDD5",
   "textColor": "#000000",
   "logo": {
     "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/employment.png",
