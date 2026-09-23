@@ -1,7 +1,7 @@
 {
-  "id": "kyc-aml-identity-eu",
+  "id": "kyc-aml-eu",
   "version": 1,
-  "category": "kyc/aml",
+  "category": "kyc",
   "name": "KYC/AML identity EU",
   "description": "An identity credential issued off the back of a completed KYC/AML check for EU customers.",
   "format": "SdJwtVc",

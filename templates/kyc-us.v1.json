@@ -1,7 +1,7 @@
 {
-  "id": "kyc-identity-us",
+  "id": "kyc-us",
   "version": 1,
-  "category": "kyc/aml",
+  "category": "kyc",
   "name": "KYC identity US",
   "description": "An identity credential issued off the back of a completed KYC check for US customers.",
   "format": "SdJwtVc",

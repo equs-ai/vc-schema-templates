@@ -12,7 +12,7 @@ const SUPPORTED_SIGN_ALGS = ['ES256'];
  * Hosts a `logo.uri` may point at. Validate-on-ingest cannot catch a well-formed template with
  * an attacker-controlled logo rendered in the operator portal, so it is gated here.
  */
-const LOGO_HOST_ALLOWLIST = ['pub-e63b17b4d990438a83af58c15949f8a2.r2.dev'];
+const LOGO_HOST_ALLOWLIST = ['pub-e63b17b4d990438a83af58c15949f8a2.r2.dev', 'github.com'];
 
 const SCHEMA = JSON.parse(readFileSync('schema/template.schema.json', 'utf8'));
 
