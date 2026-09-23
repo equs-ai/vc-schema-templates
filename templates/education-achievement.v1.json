@@ -1,0 +1,97 @@
+{
+  "id": "education-achievement",
+  "version": 1,
+  "category": "education",
+  "name": "Education Achievement (Degree/Diploma/Certificate)",
+  "description": "A credential attesting degree/diploma/certificate by a university",
+  "format": "SdJwtVc",
+  "bindMethod": [
+    "JWK"
+  ],
+  "credSignAlgs": [
+    "ES256"
+  ],
+  "proofSignAlgs": [
+    "ES256"
+  ],
+  "bgColor": "#FEF3C7",
+  "textColor": "#000000",
+  "logo": {
+    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/education.png",
+    "altText": "Identity Logo"
+  },
+  "claimDefs": [
+    {
+      "path": [
+        "full_name"
+      ],
+      "name": "Full Name",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "birth_date"
+      ],
+      "name": "Date of Birth",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "student_id"
+      ],
+      "name": "Student ID",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "document_id"
+      ],
+      "name": "Document ID",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "achievement", "type"
+      ],
+      "name": "Achievement Type (Degree/Diploma/Certificate)",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "achievement", "name"
+      ],
+      "name": "Achievement Name",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "achievement", "description"
+      ],
+      "name": "Achievement Description",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "achievement", "criteria"
+      ],
+      "name": "Achievement Criteria",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "field_of_study"
+      ],
+      "name": "Field of Study",
+      "dataType": "Text",
+      "mandatory": true
+    }
+  ]
+}

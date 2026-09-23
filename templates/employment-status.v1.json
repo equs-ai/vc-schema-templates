@@ -1,0 +1,97 @@
+{
+  "id": "employment-status",
+  "version": 1,
+  "category": "employment",
+  "name": "Employment Status",
+  "description": "A credential attesting employment status of the holder",
+  "format": "SdJwtVc",
+  "bindMethod": [
+    "JWK"
+  ],
+  "credSignAlgs": [
+    "ES256"
+  ],
+  "proofSignAlgs": [
+    "ES256"
+  ],
+  "bgColor": "#DBEAFE",
+  "textColor": "#000000",
+  "logo": {
+    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/employment.png",
+    "altText": "Identity Logo"
+  },
+  "claimDefs": [
+    {
+      "path": [
+        "full_name"
+      ],
+      "name": "Full Name",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "birth_date"
+      ],
+      "name": "Date of Birth",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "tax_number"
+      ],
+      "name": "Tax Number",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "employer"
+      ],
+      "name": "Employer Name",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "job_title"
+      ],
+      "name": "Job Title",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "full_time"
+      ],
+      "name": "Full Time",
+      "dataType": "Boolean",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "start_date"
+      ],
+      "name": "Start Date",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "end_date"
+      ],
+      "name": "End Date",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "comment"
+      ],
+      "name": "Comment",
+      "dataType": "Text",
+      "mandatory": false
+    }
+  ]
+}

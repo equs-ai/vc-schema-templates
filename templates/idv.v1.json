@@ -1,0 +1,127 @@
+{
+  "id": "idv",
+  "version": 1,
+  "category": "identity",
+  "name": "Identity Verification",
+  "description": "A credential attesting identity of the holder: name, age, email, phone, address",
+  "format": "SdJwtVc",
+  "bindMethod": [
+    "JWK"
+  ],
+  "credSignAlgs": [
+    "ES256"
+  ],
+  "proofSignAlgs": [
+    "ES256"
+  ],
+  "bgColor": "#F3E8FF",
+  "textColor": "#000000",
+  "logo": {
+    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/idv.png",
+    "altText": "Identity Logo"
+  },
+  "claimDefs": [
+    {
+      "path": [
+        "full_name"
+      ],
+      "name": "Full Name",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "email"
+      ],
+      "name": "Email",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "phone"
+      ],
+      "name": "Phone Number",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "birth_date"
+      ],
+      "name": "Date of Birth",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "age_over_18"
+      ],
+      "name": "Is Over 18",
+      "dataType": "Boolean",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "age_over_21"
+      ],
+      "name": "Is Over 21",
+      "dataType": "Boolean",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "country"
+      ],
+      "name": "Country",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "state"
+      ],
+      "name": "State / Province",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "city"
+      ],
+      "name": "City / Locality",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "postal"
+      ],
+      "name": "Postal / ZIP Code",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "street"
+      ],
+      "name": "Street Name and Number",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "address",
+        "apartment"
+      ],
+      "name": "Apartment, Suite, Floor, Unit",
+      "dataType": "Text",
+      "mandatory": false
+    }
+  ]
+}
