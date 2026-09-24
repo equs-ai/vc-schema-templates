@@ -2,11 +2,11 @@
   "registryVersion": "0.1.0",
   "templates": [
     {
-      "id": "address",
+      "id": "age",
       "version": 1,
       "category": "identity",
-      "name": "Address",
-      "description": "A credential attesting the postal address of the holder.",
+      "name": "Age over 18/21",
+      "description": "A credential attesting that the holder is over 18 or 21, without disclosing a date of birth.",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -17,79 +17,37 @@
       "proofSignAlgs": [
         "ES256"
       ],
-      "expiration": 31536000,
+      "bgColor": "#DCFCE7",
+      "textColor": "#000000",
       "logo": {
-        "uri": "https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/mark/kanba.png",
-        "altText": "Address logo"
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/age.png",
+        "altText": "Age Logo"
       },
-      "bgColor": "#99BDDC",
-      "textColor": "#000000",
-      "claimDefs": [
-        {
-          "path": [
-            "address",
-            "zip_code"
-          ],
-          "name": "Zip code",
-          "dataType": "Text",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "address",
-            "city"
-          ],
-          "name": "City",
-          "dataType": "Text",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "address",
-            "state"
-          ],
-          "name": "State",
-          "dataType": "Text",
-          "mandatory": false
-        }
-      ]
-    },
-    {
-      "id": "age-over-18",
-      "version": 1,
-      "category": "identity",
-      "name": "Age over 18",
-      "description": "A credential attesting that the holder is over 18, without disclosing a date of birth.",
-      "format": "SdJwtVc",
-      "bindMethod": [
-        "JWK"
-      ],
-      "credSignAlgs": [
-        "ES256"
-      ],
-      "proofSignAlgs": [
-        "ES256"
-      ],
-      "expiration": 31536000,
-      "bgColor": "#7ACCB1",
-      "textColor": "#000000",
       "claimDefs": [
         {
           "path": [
             "age_over_18"
           ],
           "name": "Is Over 18",
-          "dataType": "Text",
+          "dataType": "Boolean",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "age_over_21"
+          ],
+          "name": "Is Over 21",
+          "dataType": "Boolean",
           "mandatory": true
         }
       ]
     },
     {
-      "id": "aml-screening",
+      "id": "education-achievement",
       "version": 1,
-      "category": "aml",
-      "name": "AML screening",
-      "description": "A credential attesting the outcome and date of an anti-money-laundering screening.",
+      "category": "education",
+      "name": "Education Achievement (Degree/Diploma/Certificate)",
+      "description": "A credential attesting degree/diploma/certificate by a university",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -100,63 +58,97 @@
       "proofSignAlgs": [
         "ES256"
       ],
-      "expiration": 31536000,
-      "assurance": "high",
-      "bgColor": "#1F3A5F",
-      "textColor": "#FFFFFF",
+      "bgColor": "#FEF3C7",
+      "textColor": "#000000",
+      "logo": {
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/education.png",
+        "altText": "Identity Logo"
+      },
       "claimDefs": [
         {
           "path": [
-            "aml"
+            "full_name"
           ],
-          "name": "AML screening",
-          "dataType": "Display",
-          "mandatory": true
-        },
-        {
-          "path": [
-            "aml",
-            "screening_result"
-          ],
-          "name": "Screening result",
+          "name": "Full Name",
           "dataType": "Text",
           "mandatory": true
         },
         {
           "path": [
-            "aml",
-            "screened_at"
+            "birth_date"
           ],
-          "name": "Screened at",
+          "name": "Date of Birth",
           "dataType": "Date",
           "mandatory": true
         },
         {
           "path": [
-            "aml",
-            "sanctions_match"
+            "student_id"
           ],
-          "name": "Sanctions list match",
-          "dataType": "Boolean",
+          "name": "Student ID",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "document_id"
+          ],
+          "name": "Document ID",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "achievement",
+            "type"
+          ],
+          "name": "Achievement Type (Degree/Diploma/Certificate)",
+          "dataType": "Text",
           "mandatory": true
         },
         {
           "path": [
-            "aml",
-            "pep_match"
+            "achievement",
+            "name"
           ],
-          "name": "Politically exposed person match",
-          "dataType": "Boolean",
+          "name": "Achievement Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "achievement",
+            "description"
+          ],
+          "name": "Achievement Description",
+          "dataType": "Text",
           "mandatory": false
+        },
+        {
+          "path": [
+            "achievement",
+            "criteria"
+          ],
+          "name": "Achievement Criteria",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "field_of_study"
+          ],
+          "name": "Field of Study",
+          "dataType": "Text",
+          "mandatory": true
         }
       ]
     },
     {
-      "id": "country",
+      "id": "employment-status",
       "version": 1,
-      "category": "identity",
-      "name": "Country",
-      "description": "A credential attesting the country of residence of the holder.",
+      "category": "employment",
+      "name": "Employment Status",
+      "description": "A credential attesting employment status of the holder",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -167,10 +159,158 @@
       "proofSignAlgs": [
         "ES256"
       ],
-      "expiration": 31536000,
-      "bgColor": "#FFEC99",
+      "bgColor": "#FFEDD5",
       "textColor": "#000000",
+      "logo": {
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/employment.png",
+        "altText": "Identity Logo"
+      },
       "claimDefs": [
+        {
+          "path": [
+            "full_name"
+          ],
+          "name": "Full Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "birth_date"
+          ],
+          "name": "Date of Birth",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "tax_number"
+          ],
+          "name": "Tax Number",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "employer"
+          ],
+          "name": "Employer Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "job_title"
+          ],
+          "name": "Job Title",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "full_time"
+          ],
+          "name": "Full Time",
+          "dataType": "Boolean",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "start_date"
+          ],
+          "name": "Start Date",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "end_date"
+          ],
+          "name": "End Date",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "comment"
+          ],
+          "name": "Comment",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "idv",
+      "version": 1,
+      "category": "identity",
+      "name": "Identity Verification",
+      "description": "A credential attesting identity of the holder: name, age, email, phone, address",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "bgColor": "#F3E8FF",
+      "textColor": "#000000",
+      "logo": {
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/idv.png",
+        "altText": "Identity Logo"
+      },
+      "claimDefs": [
+        {
+          "path": [
+            "full_name"
+          ],
+          "name": "Full Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "email"
+          ],
+          "name": "Email",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "phone"
+          ],
+          "name": "Phone Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "birth_date"
+          ],
+          "name": "Date of Birth",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "age_over_18"
+          ],
+          "name": "Is Over 18",
+          "dataType": "Boolean",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "age_over_21"
+          ],
+          "name": "Is Over 21",
+          "dataType": "Boolean",
+          "mandatory": true
+        },
         {
           "path": [
             "address",
@@ -178,109 +318,318 @@
           ],
           "name": "Country",
           "dataType": "Text",
-          "mandatory": false
-        }
-      ]
-    },
-    {
-      "id": "email",
-      "version": 1,
-      "category": "identity",
-      "name": "E-mail address",
-      "description": "A credential attesting a verified e-mail address of the holder.",
-      "format": "SdJwtVc",
-      "bindMethod": [
-        "JWK"
-      ],
-      "credSignAlgs": [
-        "ES256"
-      ],
-      "proofSignAlgs": [
-        "ES256"
-      ],
-      "expiration": 31536000,
-      "logo": {
-        "uri": "https://pub-e63b17b4d990438a83af58c15949f8a2.r2.dev/mark/kanba.png",
-        "altText": "E-mail logo"
-      },
-      "bgColor": "#2f4e73",
-      "textColor": "#000000",
-      "claimDefs": [
+          "mandatory": true
+        },
         {
           "path": [
-            "email"
+            "address",
+            "state"
           ],
-          "name": "Email",
-          "dataType": "Text",
-          "mandatory": false
-        }
-      ]
-    },
-    {
-      "id": "kyc-identity",
-      "version": 1,
-      "category": "identity",
-      "name": "KYC identity",
-      "description": "An identity credential issued off the back of a completed KYC check.",
-      "format": "SdJwtVc",
-      "bindMethod": [
-        "JWK"
-      ],
-      "credSignAlgs": [
-        "ES256"
-      ],
-      "proofSignAlgs": [
-        "ES256"
-      ],
-      "expiration": 31536000,
-      "assurance": "high",
-      "bgColor": "#3D2B56",
-      "textColor": "#FFFFFF",
-      "claimDefs": [
-        {
-          "path": [
-            "email"
-          ],
-          "name": "Email",
-          "dataType": "Text",
-          "mandatory": false
-        }
-      ]
-    },
-    {
-      "id": "name",
-      "version": 1,
-      "category": "identity",
-      "name": "Name",
-      "description": "A credential attesting the given and family name of the holder.",
-      "format": "SdJwtVc",
-      "bindMethod": [
-        "JWK"
-      ],
-      "credSignAlgs": [
-        "ES256"
-      ],
-      "proofSignAlgs": [
-        "ES256"
-      ],
-      "expiration": 31536000,
-      "bgColor": "#FFFFFF",
-      "textColor": "#000000",
-      "claimDefs": [
-        {
-          "path": [
-            "first_name"
-          ],
-          "name": "First name",
+          "name": "State / Province",
           "dataType": "Text",
           "mandatory": true
         },
         {
           "path": [
-            "last_name"
+            "address",
+            "city"
           ],
-          "name": "Last name",
+          "name": "City / Locality",
           "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "address",
+            "postal"
+          ],
+          "name": "Postal / ZIP Code",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "address",
+            "street"
+          ],
+          "name": "Street Name and Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "address",
+            "apartment"
+          ],
+          "name": "Apartment, Suite, Floor, Unit",
+          "dataType": "Text",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "kyc-aml-eu",
+      "version": 1,
+      "category": "kyc",
+      "name": "KYC/AML identity EU",
+      "description": "An identity credential issued off the back of a completed KYC/AML check for EU customers.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "bgColor": "#F3E8FF",
+      "textColor": "#FFFFFF",
+      "logo": {
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/kyc.png",
+        "altText": "KYC Logo"
+      },
+      "claimDefs": [
+        {
+          "path": [
+            "full_name"
+          ],
+          "name": "Full Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "birth_date"
+          ],
+          "name": "Date of Birth",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "email"
+          ],
+          "name": "Email",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "phone"
+          ],
+          "name": "Phone Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "address"
+          ],
+          "name": "Residential Address",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "citizenship"
+          ],
+          "name": "Citizenship",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "residence_country"
+          ],
+          "name": "Country of Residence",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "residence_status"
+          ],
+          "name": "Residence Status",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "tax_number"
+          ],
+          "name": "Tax Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document",
+            "type"
+          ],
+          "name": "Identity Document Type",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document",
+            "number"
+          ],
+          "name": "Identity Document Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document",
+            "country"
+          ],
+          "name": "Identity Document Country",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document",
+            "expiration"
+          ],
+          "name": "Identity Document Expiration Date",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "aml",
+            "risk_category"
+          ],
+          "name": "AML Risk Category",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "aml",
+            "screening_result"
+          ],
+          "name": "AML Screening Result",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "aml",
+            "screened_at"
+          ],
+          "name": "AML Screened at",
+          "dataType": "Date",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "aml",
+            "sanctions_match"
+          ],
+          "name": "Sanctions List Match",
+          "dataType": "Boolean",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "aml",
+            "pep_match"
+          ],
+          "name": "Politically Exposed Person Match",
+          "dataType": "Boolean",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": "kyc-us",
+      "version": 1,
+      "category": "kyc",
+      "name": "KYC identity US",
+      "description": "An identity credential issued off the back of a completed KYC check for US customers.",
+      "format": "SdJwtVc",
+      "bindMethod": [
+        "JWK"
+      ],
+      "credSignAlgs": [
+        "ES256"
+      ],
+      "proofSignAlgs": [
+        "ES256"
+      ],
+      "bgColor": "#F3E8FF",
+      "textColor": "#FFFFFF",
+      "logo": {
+        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/kyc.png",
+        "altText": "KYC Logo"
+      },
+      "claimDefs": [
+        {
+          "path": [
+            "full_name"
+          ],
+          "name": "Full Name",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "birth_date"
+          ],
+          "name": "Date of Birth",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "email"
+          ],
+          "name": "Email",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "phone"
+          ],
+          "name": "Phone Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "address"
+          ],
+          "name": "Residential Address",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "tax_number"
+          ],
+          "name": "Tax Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "driver_license"
+          ],
+          "name": "Driver License Number",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "ofac_check"
+          ],
+          "name": "OFAC Check Result",
+          "dataType": "Boolean",
           "mandatory": true
         }
       ]
