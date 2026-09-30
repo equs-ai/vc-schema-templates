@@ -17,8 +17,8 @@
   "bgColor": "#FFEDD5",
   "textColor": "#000000",
   "logo": {
-    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/employment.png",
-    "altText": "Identity Logo"
+    "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/employment.png",
+    "altText": "Employment Logo"
   },
   "claimDefs": [
     {
@@ -83,7 +83,7 @@
       ],
       "name": "End Date",
       "dataType": "Date",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [

@@ -7,6 +7,7 @@ const cases = [
   ['test/fixtures/uppercase-id', 1, 'an uppercase `id`'],
   ['test/fixtures/unsupported-alg', 1, 'a signing algorithm the platform rejects'],
   ['test/fixtures/logo-host', 1, 'a `logo.uri` on an unlisted host'],
+  ['test/fixtures/logo-github-page', 1, 'a `logo.uri` on a GitHub HTML page rather than the raw image'],
   ['test/fixtures/two-current', 1, 'two files claiming the same current version'],
 ];
 

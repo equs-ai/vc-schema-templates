@@ -2,7 +2,7 @@
   "id": "age",
   "version": 1,
   "category": "identity",
-  "name": "Age over 18/21",
+  "name": "Age over 18 or 21",
   "description": "A credential attesting that the holder is over 18 or 21, without disclosing a date of birth.",
   "format": "SdJwtVc",
   "bindMethod": [
@@ -17,7 +17,7 @@
   "bgColor": "#DCFCE7",
   "textColor": "#000000",
   "logo": {
-    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/age.png",
+    "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/age.png",
     "altText": "Age Logo"
   },
   "claimDefs": [

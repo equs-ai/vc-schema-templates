@@ -5,7 +5,7 @@
       "id": "age",
       "version": 1,
       "category": "identity",
-      "name": "Age over 18/21",
+      "name": "Age over 18 or 21",
       "description": "A credential attesting that the holder is over 18 or 21, without disclosing a date of birth.",
       "format": "SdJwtVc",
       "bindMethod": [
@@ -20,7 +20,7 @@
       "bgColor": "#DCFCE7",
       "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/age.png",
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/age.png",
         "altText": "Age Logo"
       },
       "claimDefs": [
@@ -46,7 +46,7 @@
       "id": "education-achievement",
       "version": 1,
       "category": "education",
-      "name": "Education Achievement (Degree/Diploma/Certificate)",
+      "name": "Education Achievement (Degree, Diploma or Certificate)",
       "description": "A credential attesting degree/diploma/certificate by a university",
       "format": "SdJwtVc",
       "bindMethod": [
@@ -61,8 +61,8 @@
       "bgColor": "#FEF3C7",
       "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/education.png",
-        "altText": "Identity Logo"
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/education.png",
+        "altText": "Education Logo"
       },
       "claimDefs": [
         {
@@ -102,7 +102,7 @@
             "achievement",
             "type"
           ],
-          "name": "Achievement Type (Degree/Diploma/Certificate)",
+          "name": "Achievement Type (Degree, Diploma or Certificate)",
           "dataType": "Text",
           "mandatory": true
         },
@@ -162,8 +162,8 @@
       "bgColor": "#FFEDD5",
       "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/employment.png",
-        "altText": "Identity Logo"
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/employment.png",
+        "altText": "Employment Logo"
       },
       "claimDefs": [
         {
@@ -228,7 +228,7 @@
           ],
           "name": "End Date",
           "dataType": "Date",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -259,7 +259,7 @@
       "bgColor": "#F3E8FF",
       "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/idv.png",
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/idv.png",
         "altText": "Identity Logo"
       },
       "claimDefs": [
@@ -325,7 +325,7 @@
             "address",
             "state"
           ],
-          "name": "State / Province",
+          "name": "State or Province",
           "dataType": "Text",
           "mandatory": true
         },
@@ -334,7 +334,7 @@
             "address",
             "city"
           ],
-          "name": "City / Locality",
+          "name": "City or Locality",
           "dataType": "Text",
           "mandatory": true
         },
@@ -343,7 +343,7 @@
             "address",
             "postal"
           ],
-          "name": "Postal / ZIP Code",
+          "name": "Postal or ZIP Code",
           "dataType": "Text",
           "mandatory": true
         },
@@ -371,7 +371,7 @@
       "id": "kyc-aml-eu",
       "version": 1,
       "category": "kyc",
-      "name": "KYC/AML identity EU",
+      "name": "KYC and AML identity EU",
       "description": "An identity credential issued off the back of a completed KYC/AML check for EU customers.",
       "format": "SdJwtVc",
       "bindMethod": [
@@ -384,9 +384,9 @@
         "ES256"
       ],
       "bgColor": "#F3E8FF",
-      "textColor": "#FFFFFF",
+      "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/kyc.png",
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/kyc.png",
         "altText": "KYC Logo"
       },
       "claimDefs": [
@@ -562,9 +562,9 @@
         "ES256"
       ],
       "bgColor": "#F3E8FF",
-      "textColor": "#FFFFFF",
+      "textColor": "#000000",
       "logo": {
-        "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/kyc.png",
+        "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/kyc.png",
         "altText": "KYC Logo"
       },
       "claimDefs": [
