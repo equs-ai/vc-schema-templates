@@ -83,7 +83,7 @@
         "address",
         "state"
       ],
-      "name": "State / Province",
+      "name": "State or Province",
       "dataType": "Text",
       "mandatory": true
     },
@@ -92,7 +92,7 @@
         "address",
         "city"
       ],
-      "name": "City / Locality",
+      "name": "City or Locality",
       "dataType": "Text",
       "mandatory": true
     },
@@ -101,7 +101,7 @@
         "address",
         "postal"
       ],
-      "name": "Postal / ZIP Code",
+      "name": "Postal or ZIP Code",
       "dataType": "Text",
       "mandatory": true
     },
