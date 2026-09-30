@@ -17,7 +17,7 @@
   "bgColor": "#F3E8FF",
   "textColor": "#000000",
   "logo": {
-    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/idv.png",
+    "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/idv.png",
     "altText": "Identity Logo"
   },
   "claimDefs": [

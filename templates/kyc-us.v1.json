@@ -15,9 +15,9 @@
     "ES256"
   ],
   "bgColor": "#F3E8FF",
-  "textColor": "#FFFFFF",
+  "textColor": "#000000",
   "logo": {
-    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/kyc.png",
+    "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/kyc.png",
     "altText": "KYC Logo"
   },
   "claimDefs": [

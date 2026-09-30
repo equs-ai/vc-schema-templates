@@ -17,8 +17,8 @@
   "bgColor": "#FEF3C7",
   "textColor": "#000000",
   "logo": {
-    "uri": "https://github.com/equs-ai/vc-schema-templates/blob/main/images/education.png",
-    "altText": "Identity Logo"
+    "uri": "https://raw.githubusercontent.com/equs-ai/vc-schema-templates/main/images/education.png",
+    "altText": "Education Logo"
   },
   "claimDefs": [
     {
