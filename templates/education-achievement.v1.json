@@ -2,7 +2,7 @@
   "id": "education-achievement",
   "version": 1,
   "category": "education",
-  "name": "Education Achievement (Degree, Diploma or Certificate)",
+  "name": "Education Achievement (Degree or Diploma or Certificate)",
   "description": "A credential attesting degree/diploma/certificate by a university",
   "format": "SdJwtVc",
   "bindMethod": [
