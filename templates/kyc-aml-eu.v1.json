@@ -111,6 +111,14 @@
     },
     {
       "path": [
+        "identity_document"
+      ],
+      "name": "Identity Document",
+      "dataType": "Display",
+      "mandatory": true
+    },
+    {
+      "path": [
         "identity_document", "type"
       ],
       "name": "Identity Document Type",
