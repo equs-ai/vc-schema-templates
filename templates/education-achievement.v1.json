@@ -35,7 +35,7 @@
       ],
       "name": "Date of Birth",
       "dataType": "Date",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [
@@ -91,6 +91,14 @@
       ],
       "name": "Field of Study",
       "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "awarded_at"
+      ],
+      "name": "Awarded At",
+      "dataType": "Date",
       "mandatory": true
     }
   ]

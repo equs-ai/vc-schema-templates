@@ -3,7 +3,7 @@
   "version": 1,
   "category": "identity",
   "name": "Identity Verification",
-  "description": "A credential attesting identity of the holder: name, age, email, phone, address",
+  "description": "A credential attesting identity of the holder: name, date of birth, address. Contact details are optional.",
   "format": "SdJwtVc",
   "bindMethod": [
     "JWK"
@@ -35,7 +35,7 @@
       ],
       "name": "Email",
       "dataType": "Text",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [
@@ -43,7 +43,7 @@
       ],
       "name": "Phone Number",
       "dataType": "Text",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [
