@@ -99,6 +99,14 @@
         },
         {
           "path": [
+            "achievement"
+          ],
+          "name": "Achievement",
+          "dataType": "Display",
+          "mandatory": true
+        },
+        {
+          "path": [
             "achievement",
             "type"
           ],
@@ -305,6 +313,14 @@
         },
         {
           "path": [
+            "address"
+          ],
+          "name": "Address",
+          "dataType": "Display",
+          "mandatory": true
+        },
+        {
+          "path": [
             "address",
             "country"
           ],
@@ -472,6 +488,14 @@
         },
         {
           "path": [
+            "identity_document"
+          ],
+          "name": "Identity Document",
+          "dataType": "Display",
+          "mandatory": true
+        },
+        {
+          "path": [
             "identity_document",
             "type"
           ],
@@ -585,6 +609,14 @@
           ],
           "name": "Tax Number (last four digits)",
           "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document"
+          ],
+          "name": "Identity Document",
+          "dataType": "Display",
           "mandatory": true
         },
         {

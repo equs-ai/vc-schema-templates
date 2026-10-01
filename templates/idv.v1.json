@@ -71,6 +71,14 @@
     },
     {
       "path": [
+        "address"
+      ],
+      "name": "Address",
+      "dataType": "Display",
+      "mandatory": true
+    },
+    {
+      "path": [
         "address",
         "country"
       ],

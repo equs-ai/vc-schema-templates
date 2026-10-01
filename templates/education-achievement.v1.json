@@ -55,6 +55,14 @@
     },
     {
       "path": [
+        "achievement"
+      ],
+      "name": "Achievement",
+      "dataType": "Display",
+      "mandatory": true
+    },
+    {
+      "path": [
         "achievement", "type"
       ],
       "name": "Achievement Type (Degree, Diploma or Certificate)",
