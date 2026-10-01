@@ -3,7 +3,7 @@
   "version": 1,
   "category": "kyc",
   "name": "KYC identity US",
-  "description": "An identity credential issued off the back of a completed KYC check for US customers.",
+  "description": "An identity credential issued off the back of completed customer identification for US customers. It attests that identity was verified, against which document type, and when. It does not carry screening outcomes; relying parties check current status via the status list.",
   "format": "SdJwtVc",
   "bindMethod": [
     "JWK"
@@ -43,7 +43,7 @@
       ],
       "name": "Email",
       "dataType": "Text",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [
@@ -51,7 +51,7 @@
       ],
       "name": "Phone Number",
       "dataType": "Text",
-      "mandatory": true
+      "mandatory": false
     },
     {
       "path": [
@@ -63,26 +63,50 @@
     },
     {
       "path": [
-        "tax_number"
+        "tax_number_last4"
       ],
-      "name": "Tax Number",
+      "name": "Tax Number (last four digits)",
       "dataType": "Text",
       "mandatory": true
     },
     {
       "path": [
-        "driver_license"
+        "identity_document", "type"
       ],
-      "name": "Driver License Number",
+      "name": "Identity Document Type",
       "dataType": "Text",
       "mandatory": true
     },
     {
       "path": [
-        "ofac_check"
+        "identity_document", "issuing_state"
       ],
-      "name": "OFAC Check Result",
-      "dataType": "Boolean",
+      "name": "Identity Document Issuing State",
+      "dataType": "Text",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "identity_document", "number"
+      ],
+      "name": "Identity Document Number",
+      "dataType": "Text",
+      "mandatory": false
+    },
+    {
+      "path": [
+        "identity_document", "expiration"
+      ],
+      "name": "Identity Document Expiration Date",
+      "dataType": "Date",
+      "mandatory": true
+    },
+    {
+      "path": [
+        "verification_completed_at"
+      ],
+      "name": "Identity Verification Completed At",
+      "dataType": "Date",
       "mandatory": true
     }
   ]

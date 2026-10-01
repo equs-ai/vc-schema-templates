@@ -79,7 +79,7 @@
           ],
           "name": "Date of Birth",
           "dataType": "Date",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -140,6 +140,14 @@
           "name": "Field of Study",
           "dataType": "Text",
           "mandatory": true
+        },
+        {
+          "path": [
+            "awarded_at"
+          ],
+          "name": "Awarded At",
+          "dataType": "Date",
+          "mandatory": true
         }
       ]
     },
@@ -180,14 +188,6 @@
           ],
           "name": "Date of Birth",
           "dataType": "Date",
-          "mandatory": true
-        },
-        {
-          "path": [
-            "tax_number"
-          ],
-          "name": "Tax Number",
-          "dataType": "Text",
           "mandatory": false
         },
         {
@@ -229,14 +229,6 @@
           "name": "End Date",
           "dataType": "Date",
           "mandatory": false
-        },
-        {
-          "path": [
-            "comment"
-          ],
-          "name": "Comment",
-          "dataType": "Text",
-          "mandatory": false
         }
       ]
     },
@@ -245,7 +237,7 @@
       "version": 1,
       "category": "identity",
       "name": "Identity Verification",
-      "description": "A credential attesting identity of the holder: name, age, email, phone, address",
+      "description": "A credential attesting identity of the holder: name, date of birth, address. Contact details are optional.",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -277,7 +269,7 @@
           ],
           "name": "Email",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -285,7 +277,7 @@
           ],
           "name": "Phone Number",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -372,7 +364,7 @@
       "version": 1,
       "category": "kyc",
       "name": "KYC and AML identity EU",
-      "description": "An identity credential issued off the back of a completed KYC/AML check for EU customers.",
+      "description": "An identity credential issued off the back of completed identity verification for EU customers. Carries the Article 22(1) AMLR dataset so a relying obliged entity can use it as a verification means. It does not carry due diligence conclusions or screening outcomes; relying parties perform their own CDD and check current status via the status list.",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -408,11 +400,19 @@
         },
         {
           "path": [
+            "birth_place"
+          ],
+          "name": "Place of Birth",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
             "email"
           ],
           "name": "Email",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -420,7 +420,7 @@
           ],
           "name": "Phone Number",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -456,11 +456,19 @@
         },
         {
           "path": [
+            "national_id_number"
+          ],
+          "name": "National Identification Number",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
             "tax_number"
           ],
           "name": "Tax Number",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -478,7 +486,7 @@
           ],
           "name": "Identity Document Number",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -500,48 +508,11 @@
         },
         {
           "path": [
-            "aml",
-            "risk_category"
+            "verification_completed_at"
           ],
-          "name": "AML Risk Category",
-          "dataType": "Text",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "aml",
-            "screening_result"
-          ],
-          "name": "AML Screening Result",
-          "dataType": "Text",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "aml",
-            "screened_at"
-          ],
-          "name": "AML Screened at",
+          "name": "Identity Verification Completed At",
           "dataType": "Date",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "aml",
-            "sanctions_match"
-          ],
-          "name": "Sanctions List Match",
-          "dataType": "Boolean",
-          "mandatory": false
-        },
-        {
-          "path": [
-            "aml",
-            "pep_match"
-          ],
-          "name": "Politically Exposed Person Match",
-          "dataType": "Boolean",
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },
@@ -550,7 +521,7 @@
       "version": 1,
       "category": "kyc",
       "name": "KYC identity US",
-      "description": "An identity credential issued off the back of a completed KYC check for US customers.",
+      "description": "An identity credential issued off the back of completed customer identification for US customers. It attests that identity was verified, against which document type, and when. It does not carry screening outcomes; relying parties check current status via the status list.",
       "format": "SdJwtVc",
       "bindMethod": [
         "JWK"
@@ -590,7 +561,7 @@
           ],
           "name": "Email",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -598,7 +569,7 @@
           ],
           "name": "Phone Number",
           "dataType": "Text",
-          "mandatory": true
+          "mandatory": false
         },
         {
           "path": [
@@ -610,26 +581,54 @@
         },
         {
           "path": [
-            "tax_number"
+            "tax_number_last4"
           ],
-          "name": "Tax Number",
+          "name": "Tax Number (last four digits)",
           "dataType": "Text",
           "mandatory": true
         },
         {
           "path": [
-            "driver_license"
+            "identity_document",
+            "type"
           ],
-          "name": "Driver License Number",
+          "name": "Identity Document Type",
           "dataType": "Text",
           "mandatory": true
         },
         {
           "path": [
-            "ofac_check"
+            "identity_document",
+            "issuing_state"
           ],
-          "name": "OFAC Check Result",
-          "dataType": "Boolean",
+          "name": "Identity Document Issuing State",
+          "dataType": "Text",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "identity_document",
+            "number"
+          ],
+          "name": "Identity Document Number",
+          "dataType": "Text",
+          "mandatory": false
+        },
+        {
+          "path": [
+            "identity_document",
+            "expiration"
+          ],
+          "name": "Identity Document Expiration Date",
+          "dataType": "Date",
+          "mandatory": true
+        },
+        {
+          "path": [
+            "verification_completed_at"
+          ],
+          "name": "Identity Verification Completed At",
+          "dataType": "Date",
           "mandatory": true
         }
       ]

@@ -35,14 +35,6 @@
       ],
       "name": "Date of Birth",
       "dataType": "Date",
-      "mandatory": true
-    },
-    {
-      "path": [
-        "tax_number"
-      ],
-      "name": "Tax Number",
-      "dataType": "Text",
       "mandatory": false
     },
     {
@@ -83,14 +75,6 @@
       ],
       "name": "End Date",
       "dataType": "Date",
-      "mandatory": false
-    },
-    {
-      "path": [
-        "comment"
-      ],
-      "name": "Comment",
-      "dataType": "Text",
       "mandatory": false
     }
   ]
